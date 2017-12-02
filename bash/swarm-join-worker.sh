@@ -45,7 +45,7 @@ sudo docker swarm join --token $mynicetoken $primaryManagerIP:2377 &&
 echo "Joining as worker is completed..."
 
 sudo mkdir -p /etc/docker 
-sudo echo {\"insecure-registries\":[\"docker.zoom-media.nl:5000\\"]} > /tmp/daemon.json 
+sudo echo {\"insecure-registries\":[\"docker.zoom-media.nl:5000\"]} > /tmp/daemon.json 
 sudo mv -f /tmp/daemon.json /etc/docker/daemon.json && sudo mkdir /mnt/zm-asr-models 
 sudo mount -t cifs $4 /mnt/zm-asr-models -o vers=3.0,username=$5,password=$6,dir_mode=0777,file_mode=0777,sec=ntlmssp
 
